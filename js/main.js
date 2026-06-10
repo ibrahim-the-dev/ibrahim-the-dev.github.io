@@ -281,7 +281,7 @@ function updateTruck() {
 /* ---------- draggable truck: drag to drive the journey ----------
    Dragging scrubs the page scroll to match the truck's position on
    the road, so the truck stays on the path and the timeline follows. */
-const TRUCK_DRAG_SPEED = 0.45; // scroll px per dragged px — keeps the drive leisurely
+const TRUCK_DRAG_SPEED = 0.7; // scroll px per dragged px — keeps the drive leisurely
 
 let isDraggingTruck = false;
 let truckDragStartScrollY = 0;
