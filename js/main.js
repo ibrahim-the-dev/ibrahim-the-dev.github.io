@@ -126,12 +126,17 @@ navLinks.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => toggleMenu(true));
 });
 
-/* ---------- "araam se" easter egg: nav spam detector ---------- */
+/* ---------- "araam se" easter egg: nav spam detector ----------
+   5 rapid clicks = one burst; the toast only appears on the 5th burst
+   of the visit, so it stays a real easter egg. Once found, every
+   further burst triggers it again. */
 const NAV_SPAM_THRESHOLD = 5;
+const NAV_SPAM_BURSTS_REQUIRED = 5;
 const NAV_SPAM_WINDOW_MS = 1500;
 const MEME_TOAST_DURATION_MS = 3200;
 
 let navSpamCount = 0;
+let navSpamBursts = 0;
 let lastNavClickAt = 0;
 
 function showMemeToast() {
@@ -155,7 +160,11 @@ function countNavSpam() {
   lastNavClickAt = now;
   if (navSpamCount >= NAV_SPAM_THRESHOLD) {
     navSpamCount = 0;
-    showMemeToast();
+    navSpamBursts += 1;
+    if (navSpamBursts >= NAV_SPAM_BURSTS_REQUIRED) {
+      navSpamBursts = NAV_SPAM_BURSTS_REQUIRED - 1;
+      showMemeToast();
+    }
   }
 }
 
