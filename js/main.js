@@ -232,6 +232,43 @@ function updateTruck() {
   truck.style.transform = `translate(${pos.x}px, ${pos.y}px) rotate(${angle}deg)`;
 }
 
+/* ---------- draggable truck: drag to drive the journey ----------
+   Dragging scrubs the page scroll to match the truck's position on
+   the road, so the truck stays on the path and the timeline follows. */
+let isDraggingTruck = false;
+let truckGrabOffsetY = 0;
+
+function driveTruckTo(clientY) {
+  const wrapRect = roadWrap.getBoundingClientRect();
+  const progress = Math.min(Math.max((clientY - wrapRect.top) / wrapRect.height, 0), 1);
+  const wrapDocTop = wrapRect.top + window.scrollY;
+  const anchorY = window.innerHeight * TRUCK_ANCHOR_RATIO;
+  window.scrollTo({ top: progress * wrapRect.height + wrapDocTop - anchorY, behavior: 'instant' });
+}
+
+truck.addEventListener('pointerdown', (event) => {
+  isDraggingTruck = true;
+  // remember where on the truck the grab happened so it doesn't hop
+  const wrapRect = roadWrap.getBoundingClientRect();
+  truckGrabOffsetY = event.clientY - (wrapRect.top + getJourneyProgress() * wrapRect.height);
+  truck.setPointerCapture(event.pointerId);
+  document.body.classList.add('is-dragging-truck');
+  event.preventDefault();
+});
+
+truck.addEventListener('pointermove', (event) => {
+  if (isDraggingTruck) {
+    driveTruckTo(event.clientY - truckGrabOffsetY);
+  }
+});
+
+['pointerup', 'pointercancel'].forEach((type) => {
+  truck.addEventListener(type, () => {
+    isDraggingTruck = false;
+    document.body.classList.remove('is-dragging-truck');
+  });
+});
+
 /* ---------- scroll handling (rAF throttled) ---------- */
 let isTickScheduled = false;
 
