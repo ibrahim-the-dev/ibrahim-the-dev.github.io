@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibrahim Ahmed Shaikh — Software Engineer</title>
+  <meta name="description" content="Ibrahim Ahmed Shaikh — Software Engineer from Karachi. .NET, full-stack, fintech &amp; healthcare systems. Available on Upwork.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%23ff2e88'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23ffd23f'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%2300c2a8'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Outfit:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // applied before first paint so the theme doesn't flash.
+    // Day (pavitr) is the default; 'midnight' is stored as an explicit choice.
+    (function () {
+      'use strict';
+      if (localStorage.getItem('theme') !== 'midnight') {
+        document.documentElement.setAttribute('data-theme', 'pavitr');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- ====================== NAV ====================== -->
+  <nav class="nav" id="nav">
+    <a class="nav__logo" href="#home" aria-label="Home">
+      <svg viewBox="0 0 48 48" class="nav__logo-flower" aria-hidden="true">
+        <g class="spin-slow">
+          <circle cx="24" cy="24" r="22" fill="var(--pink)"/>
+          <g fill="var(--yellow)">
+            <ellipse cx="24" cy="9" rx="5" ry="8"/>
+            <ellipse cx="24" cy="39" rx="5" ry="8"/>
+            <ellipse cx="9" cy="24" rx="8" ry="5"/>
+            <ellipse cx="39" cy="24" rx="8" ry="5"/>
+            <ellipse cx="13.4" cy="13.4" rx="5" ry="7.5" transform="rotate(-45 13.4 13.4)"/>
+            <ellipse cx="34.6" cy="34.6" rx="5" ry="7.5" transform="rotate(-45 34.6 34.6)"/>
+            <ellipse cx="34.6" cy="13.4" rx="5" ry="7.5" transform="rotate(45 34.6 13.4)"/>
+            <ellipse cx="13.4" cy="34.6" rx="5" ry="7.5" transform="rotate(45 13.4 34.6)"/>
+          </g>
+          <circle cx="24" cy="24" r="9" fill="var(--teal)"/>
+          <circle cx="24" cy="24" r="4" fill="var(--cream)"/>
+        </g>
+      </svg>
+      <span>Ibrahim<em>.dev</em></span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact" class="nav__cta">Hire Me
+        <span class="spidey-sit" aria-hidden="true">
+          <svg viewBox="0 0 60 56">
+            <path d="M26 36 Q25 46 27 51" stroke="#283065" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M34 36 Q35 46 33 51" stroke="#283065" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <circle cx="27" cy="53" r="2.6" fill="#c9874f"/>
+            <circle cx="33" cy="53" r="2.6" fill="#c9874f"/>
+            <path d="M25 24 Q16 29 17 37" stroke="#d92e26" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M35 24 Q44 29 43 37" stroke="#d92e26" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <rect x="22.5" y="20" width="15" height="17" rx="6" fill="#d92e26"/>
+            <rect x="22.5" y="30" width="15" height="3.5" fill="#e69d17"/>
+            <circle cx="30" cy="12" r="9.5" fill="#d92e26"/>
+            <ellipse cx="26.5" cy="11.5" rx="3.4" ry="4.6" fill="#f6ecd9" stroke="#1a1208" stroke-width="1" transform="rotate(-14 26.5 11.5)"/>
+            <ellipse cx="33.5" cy="11.5" rx="3.4" ry="4.6" fill="#f6ecd9" stroke="#1a1208" stroke-width="1" transform="rotate(14 33.5 11.5)"/>
+          </svg>
+        </span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- ====================== HERO ====================== -->
+  <header class="hero" id="home">
+    <div class="hero__pattern" aria-hidden="true"></div>
+
+    <!-- ornamental corners -->
+    <svg class="hero__corner hero__corner--tl" viewBox="0 0 200 200" aria-hidden="true">
+      <g class="corner-bloom" id="cornerClone">
+        <path d="M0 0 H200 Q120 10 90 40 Q40 90 10 120 Q5 160 0 200 Z" fill="none"/>
+        <circle cx="28" cy="28" r="26" fill="var(--pink)"/>
+        <g fill="var(--yellow)">
+          <ellipse cx="28" cy="10" rx="6" ry="10"/>
+          <ellipse cx="28" cy="46" rx="6" ry="10"/>
+          <ellipse cx="10" cy="28" rx="10" ry="6"/>
+          <ellipse cx="46" cy="28" rx="10" ry="6"/>
+          <ellipse cx="15" cy="15" rx="6" ry="9" transform="rotate(-45 15 15)"/>
+          <ellipse cx="41" cy="41" rx="6" ry="9" transform="rotate(-45 41 41)"/>
+          <ellipse cx="41" cy="15" rx="6" ry="9" transform="rotate(45 41 15)"/>
+          <ellipse cx="15" cy="41" rx="6" ry="9" transform="rotate(45 15 41)"/>
+        </g>
+        <circle cx="28" cy="28" r="11" fill="var(--teal)"/>
+        <circle cx="28" cy="28" r="5" fill="var(--cream)"/>
+        <path class="vine" d="M52 30 Q 95 35 110 70 Q 120 95 100 120" stroke="var(--green)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path class="vine" d="M30 52 Q 35 95 70 110 Q 95 120 120 100" stroke="var(--green)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="104" cy="124" r="9" fill="var(--orange)"/>
+        <circle cx="104" cy="124" r="4" fill="var(--yellow)"/>
+        <circle cx="124" cy="104" r="9" fill="var(--orange)"/>
+        <circle cx="124" cy="104" r="4" fill="var(--yellow)"/>
+        <circle cx="86" cy="60" r="6" fill="var(--blue)"/>
+        <circle cx="60" cy="86" r="6" fill="var(--blue)"/>
+      </g>
+    </svg>
+    <svg class="hero__corner hero__corner--tr" viewBox="0 0 200 200" aria-hidden="true"><use href="#cornerClone"/></svg>
+
+    <div class="hero__inner">
+      <p class="hero__eyebrow reveal">✦ &nbsp;Karachi, Pakistan&nbsp; ✦</p>
+      <h1 class="hero__name">
+        <span class="hero__name-line reveal" style="--d:.1s">Ibrahim</span>
+        <span class="hero__name-line hero__name-line--accent reveal" style="--d:.25s">Ahmed Shaikh</span>
+      </h1>
+      <p class="hero__role reveal" style="--d:.4s">
+        <span class="hero__role-chip">Software Engineer</span>
+        <span class="hero__role-sep">·</span>
+        .NET &amp; Full-Stack Developer
+      </p>
+      <p class="hero__blurb reveal" style="--d:.5s">
+        I build banking systems, healthcare platforms, and cloud-native SaaS that real businesses run on —
+        from Pakistan's first digital cheque service to Azure-powered, real-time restoration software used by
+        250+ companies across the US.
+      </p>
+      <div class="hero__cta reveal" style="--d:.65s">
+        <a class="btn btn--primary" href="https://www.upwork.com/freelancers/~01cdd5288ce0c10666" target="_blank" rel="noopener">
+          Hire me on Upwork
+        </a>
+        <a class="btn btn--ghost" href="#journey">See my journey ↓</a>
+        <a class="btn btn--gold" href="assets/Ibrahim-Ahmed-Shaikh-CV.pdf" download>Download CV</a>
+      </div>
+      <p class="hero__urdu reveal" style="--d:.8s" title="A mother's prayer is a breeze from heaven (classic truck art poetry)">ماں کی دعا جنت کی ہوا</p>
+    </div>
+
+    <!-- truck art marquee strip -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>MASHA'ALLAH ✦ C# ✦ .NET CORE ✦ AZURE ✦ SERVICE BUS ✦ WEBSOCKETS ✦ HORN OK PLEASE ✦ SQL SERVER ✦ POSTGRESQL ✦ NODE.JS ✦ MEHNAT KAR HASAD NA KAR ✦ RAZOR PAGES ✦ ENTITY FRAMEWORK ✦ JAVASCRIPT ✦ TAILWIND ✦ KARACHI → THE WORLD ✦&nbsp;</span>
+        <span>MASHA'ALLAH ✦ C# ✦ .NET CORE ✦ AZURE ✦ SERVICE BUS ✦ WEBSOCKETS ✦ HORN OK PLEASE ✦ SQL SERVER ✦ POSTGRESQL ✦ NODE.JS ✦ MEHNAT KAR HASAD NA KAR ✦ RAZOR PAGES ✦ ENTITY FRAMEWORK ✦ JAVASCRIPT ✦ TAILWIND ✦ KARACHI → THE WORLD ✦&nbsp;</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="bunting" aria-hidden="true"></div>
+
+  <!-- ====================== ABOUT ====================== -->
+  <section class="section" id="about">
+    <div class="section__head reveal">
+      <svg class="phool" viewBox="0 0 48 48" aria-hidden="true"><use href="#phool"/></svg>
+      <h2>About Me</h2>
+      <svg class="phool" viewBox="0 0 48 48" aria-hidden="true"><use href="#phool"/></svg>
+    </div>
+    <div class="about">
+      <div class="about__text reveal">
+        <p>
+          I'm a software engineer from <strong>Karachi</strong> with <strong>3+ years</strong> of experience shipping
+          software across <strong>fintech, healthcare, and SaaS</strong>. I've digitized cheque clearing for a national
+          payments network, built medical imaging systems that speak HL7 and DICOM, and now I build product features
+          for a US restoration platform — full stack, from database schema to the pixels.
+          These days I'm deep in <strong>Azure</strong>: Service Bus messaging, background task processing,
+          and real-time features over WebSockets.
+        </p>
+        <p>
+          What drives me is the customer. <strong>450+ resolved tickets</strong> taught me to dig into
+          people's actual problems and frustrations — then build things that make their day genuinely easier.
+        </p>
+        <p>
+          I work the way Karachi's truck artists do: <em>fast, colorful, and built to survive long roads</em>.
+          Strong fundamentals, clean architecture, and no fear of legacy codebases.
+        </p>
+      </div>
+      <div class="about__stats">
+        <div class="stat reveal" style="--d:.1s">
+          <span class="stat__num" data-count="450">0</span><span class="stat__plus">+</span>
+          <span class="stat__label">support tickets resolved — and counting</span>
+        </div>
+        <div class="stat reveal" style="--d:.2s">
+          <span class="stat__num" data-count="250">0</span><span class="stat__plus">+</span>
+          <span class="stat__label">companies served on one platform</span>
+        </div>
+        <div class="stat reveal" style="--d:.3s">
+          <span class="stat__num" data-count="3">0</span><span class="stat__plus">+</span>
+          <span class="stat__label">years of professional experience</span>
+        </div>
+        <div class="stat reveal" style="--d:.4s">
+          <span class="stat__num" data-count="1">0</span><span class="stat__plus">st</span>
+          <span class="stat__label">digital cheque service in Pakistan — I helped build it</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bunting bunting--flip" aria-hidden="true"></div>
+
+  <!-- ====================== SKILLS ====================== -->
+  <section class="section section--alt" id="skills">
+    <div class="section__head reveal">
+      <svg class="phool" viewBox="0 0 48 48" aria-hidden="true"><use href="#phool"/></svg>
+      <h2>The Toolkit</h2>
+      <svg class="phool" viewBox="0 0 48 48" aria-hidden="true"><use href="#phool"/></svg>
+    </div>
+    <p class="section__sub reveal">Painted on the side of the truck, so you can read it from the highway.</p>
+    <div class="skills">
+      <div class="skill-group reveal" style="--d:.05s">
+        <h3>Languages &amp; Frameworks</h3>
+        <ul class="chips">
+          <li class="chip chip--pink">C#</li>
+          <li class="chip chip--teal">.NET Core</li>
+          <li class="chip chip--yellow">.NET Framework</li>
+          <li class="chip chip--orange">ASP.NET MVC</li>
+          <li class="chip chip--blue">Razor Pages</li>
+          <li class="chip chip--green">JavaScript</li>
+          <li class="chip chip--pink">Node.js</li>
+          <li class="chip chip--teal">Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal" style="--d:.15s">
+        <h3>Cloud &amp; Realtime</h3>
+        <ul class="chips">
+          <li class="chip chip--blue">Azure</li>
+          <li class="chip chip--pink">Azure Service Bus</li>
+          <li class="chip chip--yellow">Background Tasks</li>
+          <li class="chip chip--teal">WebSockets</li>
+          <li class="chip chip--green">AWS S3</li>
+          <li class="chip chip--orange">Windows Services</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal" style="--d:.2s">
+        <h3>Data &amp; Storage</h3>
+        <ul class="chips">
+          <li class="chip chip--orange">SQL Server</li>
+          <li class="chip chip--green">PostgreSQL</li>
+          <li class="chip chip--blue">MongoDB</li>
+          <li class="chip chip--yellow">Entity Framework</li>
+          <li class="chip chip--pink">Dapper</li>
+          <li class="chip chip--teal">Database Design</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal" style="--d:.25s">
+        <h3>Domains &amp; Protocols</h3>
+        <ul class="chips">
+          <li class="chip chip--blue">REST APIs</li>
+          <li class="chip chip--pink">HL7 / FHIR</li>
+          <li class="chip chip--yellow">DICOM / PACS</li>
+          <li class="chip chip--green">Banking &amp; Clearing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="bunting" aria-hidden="true"></div>
+
+  <!-- ====================== JOURNEY (EXPERIENCE) ====================== -->
+  <section class="section" id="journey">
+    <div class="section__head reveal">
+      <svg class="phool" viewBox="0 0 48 48" aria-hidden="true"><use href="#phool"/></svg>
+      <h2>The Journey</h2>
+      <svg class="phool" viewBox="0 0 48 48" aria-hidden="true"><use href="#phool"/></svg>
+    </div>
+    <p class="section__urdu reveal" title="The journey is better than the destination">منزل سے زیادہ سفر اچھا</p>
+    <p class="section__sub reveal">Scroll, and the truck drives the route. Karachi to Chicago — no horn needed.</p>
+
+    <div class="road-wrap" id="roadWrap">
+      <svg class="road" id="roadSvg" viewBox="0 0 200 2000" preserveAspectRatio="none" aria-hidden="true">
+        <path id="roadBase" d="M100 0 C 100 150, 40 220, 40 370 C 40 520, 160 590, 160 740 C 160 890, 40 960, 40 1110 C 40 1260, 160 1330, 160 1480 C 160 1630, 100 1740, 100 1900 L 100 2000"
+              fill="none" stroke="var(--road)" stroke-width="34" stroke-linecap="round"/>
+        <path id="roadDash" d="M100 0 C 100 150, 40 220, 40 370 C 40 520, 160 590, 160 740 C 160 890, 40 960, 40 1110 C 40 1260, 160 1330, 160 1480 C 160 1630, 100 1740, 100 1900 L 100 2000"
+              fill="none" stroke="var(--cream)" stroke-width="3" stroke-dasharray="14 18" opacity="0.55"/>
+        <path id="roadDriven" d="M100 0 C 100 150, 40 220, 40 370 C 40 520, 160 590, 160 740 C 160 890, 40 960, 40 1110 C 40 1260, 160 1330, 160 1480 C 160 1630, 100 1740, 100 1900 L 100 2000"
+              fill="none" stroke="url(#chamak)" stroke-width="7" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="chamak" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="var(--pink)"/>
+            <stop offset=".3" stop-color="var(--orange)"/>
+            <stop offset=".55" stop-color="var(--yellow)"/>
+            <stop offset=".8" stop-color="var(--teal)"/>
+            <stop offset="1" stop-color="var(--green)"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- the decorated truck -->
+      <div class="truck" id="truck" aria-hidden="true">
+        <svg viewBox="0 0 120 78">
+          <!-- taj (crown) -->
+          <path d="M30 14 L36 4 L42 12 L48 2 L54 12 L60 4 L66 14 Z" fill="var(--yellow)" stroke="var(--pink)" stroke-width="2"/>
+          <!-- cargo body -->
+          <rect x="8" y="14" width="74" height="38" rx="4" fill="var(--teal)" stroke="var(--cream)" stroke-width="2"/>
+          <rect x="13" y="19" width="64" height="10" rx="2" fill="var(--pink)"/>
+          <rect x="13" y="32" width="64" height="6" rx="2" fill="var(--yellow)"/>
+          <circle cx="22" cy="45" r="4" fill="var(--orange)"/>
+          <circle cx="36" cy="45" r="4" fill="var(--yellow)"/>
+          <circle cx="50" cy="45" r="4" fill="var(--orange)"/>
+          <circle cx="64" cy="45" r="4" fill="var(--yellow)"/>
+          <!-- cab -->
+          <path d="M82 22 H100 Q108 22 110 32 L113 44 Q114 52 106 52 H82 Z" fill="var(--pink)" stroke="var(--cream)" stroke-width="2"/>
+          <rect x="87" y="26" width="14" height="11" rx="2" fill="#bfeFFF"/>
+          <!-- bunting fringe -->
+          <g fill="var(--orange)">
+            <path d="M10 52 l4 7 4-7z"/><path d="M22 52 l4 7 4-7z"/><path d="M34 52 l4 7 4-7z"/>
+            <path d="M46 52 l4 7 4-7z"/><path d="M58 52 l4 7 4-7z"/><path d="M70 52 l4 7 4-7z"/>
+          </g>
+          <!-- wheels -->
+          <circle cx="30" cy="62" r="11" fill="#0e0f13" stroke="var(--cream)" stroke-width="2"/>
+          <circle cx="30" cy="62" r="4.5" fill="var(--yellow)"/>
+          <circle cx="92" cy="62" r="11" fill="#0e0f13" stroke="var(--cream)" stroke-width="2"/>
+          <circle cx="92" cy="62" r="4.5" fill="var(--yellow)"/>
+        </svg>
+      </div>
+
+      <!-- stops along the road -->
+      <ol class="stops">
+        <li class="stop stop--right reveal" data-stop="0.06">
+          <article class="card">
+            <div class="card__top">
+              <span class="card__badge card__badge--pink">Current</span>
+              <span class="card__dates">Nov 2025 — Present</span>
+            </div>
+            <h3 class="card__company">Albiware <a class="card__ext" href="https://albiware.com" target="_blank" rel="noopener">↗</a></h3>
+            <p class="card__role">Software Engineer · Oak Brook, IL (Remote)</p>
+            <ul class="card__points">
+              <li>Resolved <strong>450+ support tickets — and counting</strong> — high-priority bugs affecting clients across 250+ companies, always digging into the customer's real problem behind the ticket</li>
+              <li>Build new web app features with C# .NET, Razor Pages, and Tailwind CSS</li>
+              <li>Work heavily with <strong>Azure</strong> — Service Bus messaging, background task processing, and real-time WebSocket features</li>
+              <li>Led early database design for a <strong>Floor Plan LiDAR Scan</strong> feature — schema creation and migration of all existing records</li>
+              <li>Full-stack work: API development, DB migrations, frontend, and production fixes on a fast-moving product team</li>
+            </ul>
+          </article>
+        </li>
+        <li class="stop stop--left reveal" data-stop="0.32">
+          <article class="card">
+            <div class="card__top">
+              <span class="card__badge card__badge--teal">Fintech</span>
+              <span class="card__dates">Dec 2024 — Nov 2025</span>
+            </div>
+            <h3 class="card__company">NIFT Pakistan <a class="card__ext" href="https://nift.pk/" target="_blank" rel="noopener">↗</a></h3>
+            <p class="card__role">Assistant Manager, Software Development · Karachi</p>
+            <ul class="card__points">
+              <li>Contributed to <strong>Pakistan's first Digital Cheque service</strong> — deposit, issuance, validation, acceptance, and Positive Pay, end to end</li>
+              <li>Developed an Inward Clearing Portal integrated with banks' core banking systems for automated cheque posting and return marking</li>
+              <li>Built a Visual Verification module (.NET Core, Razor Pages, SQL Server) to validate digitally deposited cheques and reduce fraud</li>
+            </ul>
+          </article>
+        </li>
+        <li class="stop stop--right reveal" data-stop="0.58">
+          <article class="card">
+            <div class="card__top">
+              <span class="card__badge card__badge--orange">Healthcare</span>
+              <span class="card__dates">Mar 2024 — Dec 2024</span>
+            </div>
+            <h3 class="card__company">Nixaam <a class="card__ext" href="https://www.nixaam.com/" target="_blank" rel="noopener">↗</a></h3>
+            <p class="card__role">Software Engineer · Karachi</p>
+            <ul class="card__points">
+              <li>Developed a <strong>PACS</strong> with HL7 ordering, FHIR, DICOM receive/retrieve/query, and Modality Worklist — .NET, Windows Services, PostgreSQL, AWS S3</li>
+              <li>Built radiology portal (XRAD) APIs with layered architecture and the facade pattern, using Dapper and PostgreSQL</li>
+              <li>Rescued a struggling .NET MVC travel website and delivered it in 1.5 months</li>
+            </ul>
+          </article>
+        </li>
+        <li class="stop stop--left reveal" data-stop="0.84">
+          <article class="card">
+            <div class="card__top">
+              <span class="card__badge card__badge--green">First Gig</span>
+              <span class="card__dates">Jul 2023 — Feb 2024</span>
+            </div>
+            <h3 class="card__company">SoftFit Technologies <a class="card__ext" href="https://www.softfit.net/" target="_blank" rel="noopener">↗</a></h3>
+            <p class="card__role">Software Engineer · Karachi</p>
+            <ul class="card__points">
+              <li>Maintained and extended an HRM web application built with ASP.NET MVC, Entity Framework, and SQL Server</li>
+              <li>Built supporting APIs with .NET Core and SQL Server</li>
+              <li>Debugged biometric hardware integration and reporting issues, improving data accuracy</li>
+            </ul>
+          </article>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="bunting bunting--flip" aria-hidden="true"></div>
+
+  <!-- ====================== EDUCATION ====================== -->
+  <section class="section section--alt" id="education">
+    <div class="section__head reveal">
+      <svg class="phool" viewBox="0 0 48 48" aria-hidden="true"><use href="#phool"/></svg>
+      <h2>Education &amp; Certs</h2>
+      <svg class="phool" viewBox="0 0 48 48" aria-hidden="true"><use href="#phool"/></svg>
+    </div>
+    <div class="edu">
+      <article class="card card--edu reveal">
+        <h3 class="card__company">Bahria University, Karachi</h3>
+        <p class="card__role">BS Software Engineering · 2020 — 2024 · CGPA 3.10</p>
+      </article>
+      <article class="card card--edu reveal" style="--d:.15s">
+        <h3 class="card__company">Building RESTful APIs with Node.js &amp; Express</h3>
+        <p class="card__role">Coursera · 2023 ·
+          <a class="link" href="https://www.coursera.org/account/accomplishments/certificate/9S3QUVRBS8Q9" target="_blank" rel="noopener">View certificate ↗</a>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <div class="bunting" aria-hidden="true"></div>
+
+  <!-- ====================== CONTACT ====================== -->
+  <section class="section section--contact" id="contact">
+    <div class="contact-frame reveal">
+      <p class="contact-frame__eyebrow">✦ Next stop: your project ✦</p>
+      <h2 class="contact-frame__title">Let's Build Something</h2>
+      <p class="contact-frame__sub">Available for freelance work — APIs, full-stack .NET, database design, and rescues of codebases other people gave up on.</p>
+      <div class="contact-frame__cta">
+        <a class="btn btn--primary" href="mailto:ibrahimahmedshaikh02@gmail.com">ibrahimahmedshaikh02@gmail.com</a>
+        <a class="btn btn--ghost" href="https://www.upwork.com/freelancers/~01cdd5288ce0c10666" target="_blank" rel="noopener">Upwork Profile</a>
+        <a class="btn btn--gold" href="assets/Ibrahim-Ahmed-Shaikh-CV.pdf" download>Download CV</a>
+      </div>
+      <ul class="socials">
+        <li><a href="https://github.com/ibrahim-the-dev" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ibrahim-ahmed-shaikh-bbbb23233/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.upwork.com/freelancers/~01cdd5288ce0c10666" target="_blank" rel="noopener">Upwork</a></li>
+        <li><a href="mailto:ibrahimahmedshaikh02@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__urdu" title="Remember me in your prayers">دعا میں یاد رکھنا</p>
+    <p>Hand-painted with code in Karachi · © <span id="year"></span> Ibrahim Ahmed Shaikh</p>
+  </footer>
+
+  <!-- swinging Pavitr (day-theme entrance) -->
+  <div class="spidey-swing" id="spideySwing" aria-hidden="true">
+    <div class="spidey-swing__pendulum" id="spideyPendulum">
+      <svg viewBox="0 0 60 520">
+        <line x1="30" y1="0" x2="30" y2="427" stroke="#4a3a28" stroke-width="1.6" stroke-dasharray="4 4"/>
+        <path d="M30 427 L28 444" stroke="#d92e26" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M28 449 Q40 455 44 462" stroke="#d92e26" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M26 465 Q14 469 12 481" stroke="#283065" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M28 467 Q20 476 21 487" stroke="#283065" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <circle cx="11.5" cy="483" r="2.6" fill="#c9874f"/>
+        <circle cx="21" cy="489" r="2.6" fill="#c9874f"/>
+        <rect x="21" y="447" width="14" height="20" rx="6.5" fill="#d92e26" transform="rotate(12 28 457)"/>
+        <rect x="21" y="458" width="14" height="3.5" fill="#e69d17" transform="rotate(12 28 457)"/>
+        <circle cx="34" cy="440" r="8.5" fill="#d92e26"/>
+        <ellipse cx="31" cy="439" rx="3" ry="4.1" fill="#f6ecd9" stroke="#1a1208" stroke-width="1" transform="rotate(-14 31 439)"/>
+        <ellipse cx="37.5" cy="439.5" rx="3" ry="4.1" fill="#f6ecd9" stroke="#1a1208" stroke-width="1" transform="rotate(14 37.5 439.5)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- day / night toggle -->
+  <div class="theme-switch" id="themeSwitch">
+    <button class="theme-switch__toggle" id="themeToggle" aria-label="Toggle day / night theme" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5" fill="var(--yellow)"/>
+        <g stroke="var(--yellow)" stroke-width="2" stroke-linecap="round">
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/>
+        </g>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" fill="var(--yellow)"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- shared SVG defs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="phool">
+        <circle cx="24" cy="24" r="22" fill="var(--pink)"/>
+        <g fill="var(--yellow)">
+          <ellipse cx="24" cy="9" rx="5" ry="8"/>
+          <ellipse cx="24" cy="39" rx="5" ry="8"/>
+          <ellipse cx="9" cy="24" rx="8" ry="5"/>
+          <ellipse cx="39" cy="24" rx="8" ry="5"/>
+          <ellipse cx="13.4" cy="13.4" rx="5" ry="7.5" transform="rotate(-45 13.4 13.4)"/>
+          <ellipse cx="34.6" cy="34.6" rx="5" ry="7.5" transform="rotate(-45 34.6 34.6)"/>
+          <ellipse cx="34.6" cy="13.4" rx="5" ry="7.5" transform="rotate(45 34.6 13.4)"/>
+          <ellipse cx="13.4" cy="34.6" rx="5" ry="7.5" transform="rotate(45 13.4 34.6)"/>
+        </g>
+        <circle cx="24" cy="24" r="9" fill="var(--teal)"/>
+        <circle cx="24" cy="24" r="4" fill="var(--cream)"/>
+      </g>
+    </defs>
+  </svg>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
