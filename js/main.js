@@ -126,6 +126,43 @@ navLinks.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => toggleMenu(true));
 });
 
+/* ---------- "araam se" easter egg: nav spam detector ---------- */
+const NAV_SPAM_THRESHOLD = 5;
+const NAV_SPAM_WINDOW_MS = 1500;
+const MEME_TOAST_DURATION_MS = 3200;
+
+let navSpamCount = 0;
+let lastNavClickAt = 0;
+
+function showMemeToast() {
+  if (document.querySelector('.meme-toast')) {
+    return;
+  }
+  const toast = document.createElement('div');
+  toast.className = 'meme-toast';
+  toast.setAttribute('role', 'status');
+  toast.innerHTML =
+    '<span class="meme-toast__urdu">ایجاز شہاب، آرام سے</span>' +
+    '<span class="meme-toast__roman">Eijaz Shahab&hellip; araam se</span>';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add('meme-toast--leaving'), MEME_TOAST_DURATION_MS - 400);
+  setTimeout(() => toast.remove(), MEME_TOAST_DURATION_MS);
+}
+
+function countNavSpam() {
+  const now = performance.now();
+  navSpamCount = now - lastNavClickAt < NAV_SPAM_WINDOW_MS ? navSpamCount + 1 : 1;
+  lastNavClickAt = now;
+  if (navSpamCount >= NAV_SPAM_THRESHOLD) {
+    navSpamCount = 0;
+    showMemeToast();
+  }
+}
+
+document.querySelectorAll('.nav__links a:not(.nav__cta)').forEach((link) => {
+  link.addEventListener('click', countNavSpam);
+});
+
 /* ---------- scroll progress bar ---------- */
 const progressBar = document.getElementById('progressBar');
 
