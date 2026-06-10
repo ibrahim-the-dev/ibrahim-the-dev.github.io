@@ -281,9 +281,14 @@ function updateTruck() {
 /* ---------- draggable truck: drag to drive the journey ----------
    Dragging scrubs the page scroll to match the truck's position on
    the road, so the truck stays on the path and the timeline follows. */
-const TRUCK_DRAG_SPEED = 0.7; // scroll px per dragged px — keeps the drive leisurely
+/* one full-viewport drag covers ~this share of the road, on any screen size —
+   short laptop screens get a faster ratio, tall monitors a gentler one */
+const JOURNEY_PER_FULL_DRAG = 0.35;
+const TRUCK_DRAG_SPEED_MIN = 0.7;
+const TRUCK_DRAG_SPEED_MAX = 3;
 
 let isDraggingTruck = false;
+let truckDragSpeed = 1;
 let truckDragStartScrollY = 0;
 let truckDragStartPointerY = 0;
 
@@ -292,6 +297,11 @@ truck.addEventListener('pointerdown', (event) => {
   // anchor the drag to its starting point so movement never compounds
   truckDragStartScrollY = window.scrollY;
   truckDragStartPointerY = event.clientY;
+  const wrapHeight = roadWrap.getBoundingClientRect().height;
+  truckDragSpeed = Math.min(
+    TRUCK_DRAG_SPEED_MAX,
+    Math.max(TRUCK_DRAG_SPEED_MIN, (wrapHeight * JOURNEY_PER_FULL_DRAG) / window.innerHeight)
+  );
   truck.setPointerCapture(event.pointerId);
   document.body.classList.add('is-dragging-truck');
   event.preventDefault();
@@ -300,7 +310,7 @@ truck.addEventListener('pointerdown', (event) => {
 truck.addEventListener('pointermove', (event) => {
   if (isDraggingTruck) {
     const dragDelta = event.clientY - truckDragStartPointerY;
-    window.scrollTo({ top: truckDragStartScrollY + dragDelta * TRUCK_DRAG_SPEED, behavior: 'instant' });
+    window.scrollTo({ top: truckDragStartScrollY + dragDelta * truckDragSpeed, behavior: 'instant' });
   }
 });
 
