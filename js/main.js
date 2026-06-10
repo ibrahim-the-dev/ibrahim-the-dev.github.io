@@ -281,22 +281,17 @@ function updateTruck() {
 /* ---------- draggable truck: drag to drive the journey ----------
    Dragging scrubs the page scroll to match the truck's position on
    the road, so the truck stays on the path and the timeline follows. */
-let isDraggingTruck = false;
-let truckGrabOffsetY = 0;
+const TRUCK_DRAG_SPEED = 0.45; // scroll px per dragged px — keeps the drive leisurely
 
-function driveTruckTo(clientY) {
-  const wrapRect = roadWrap.getBoundingClientRect();
-  const progress = Math.min(Math.max((clientY - wrapRect.top) / wrapRect.height, 0), 1);
-  const wrapDocTop = wrapRect.top + window.scrollY;
-  const anchorY = window.innerHeight * TRUCK_ANCHOR_RATIO;
-  window.scrollTo({ top: progress * wrapRect.height + wrapDocTop - anchorY, behavior: 'instant' });
-}
+let isDraggingTruck = false;
+let truckDragStartScrollY = 0;
+let truckDragStartPointerY = 0;
 
 truck.addEventListener('pointerdown', (event) => {
   isDraggingTruck = true;
-  // remember where on the truck the grab happened so it doesn't hop
-  const wrapRect = roadWrap.getBoundingClientRect();
-  truckGrabOffsetY = event.clientY - (wrapRect.top + getJourneyProgress() * wrapRect.height);
+  // anchor the drag to its starting point so movement never compounds
+  truckDragStartScrollY = window.scrollY;
+  truckDragStartPointerY = event.clientY;
   truck.setPointerCapture(event.pointerId);
   document.body.classList.add('is-dragging-truck');
   event.preventDefault();
@@ -304,7 +299,8 @@ truck.addEventListener('pointerdown', (event) => {
 
 truck.addEventListener('pointermove', (event) => {
   if (isDraggingTruck) {
-    driveTruckTo(event.clientY - truckGrabOffsetY);
+    const dragDelta = event.clientY - truckDragStartPointerY;
+    window.scrollTo({ top: truckDragStartScrollY + dragDelta * TRUCK_DRAG_SPEED, behavior: 'instant' });
   }
 });
 
